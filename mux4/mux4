@@ -1,0 +1,16 @@
+ENTITY mux4 IS
+  PORT(d0,d1,d2,d3:IN Bit;
+         sel:IN Bit_Vector(0 TO 1);
+         y:OUT Bit);
+END mux4; 
+ARCHITECTURE behav1 OF mux4 IS
+BEGIN
+mux4_p1:PROCESS(d0,d1,d2,d3,sel)
+  			 BEGIN
+   				 IF sel = "00" THEN y <= d0;
+   				 ELSIF sel = "01" THEN y <= d1;
+    			 ELSIF sel = "10" THEN y <= d2;
+    			 ELSE y <= d3;
+    			 END IF;
+  			END PROCESS mux4_p1;
+END behav1;
