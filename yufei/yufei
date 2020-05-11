@@ -1,0 +1,11 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity yufei is
+	port(a:in std_logic;
+			b:in std_logic;
+			f:out std_logic);
+end yufei;
+architecture bav of yufei is
+begin
+	f<=not(a and b);
+end bav;
